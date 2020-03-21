@@ -1,9 +1,11 @@
 const express = require("express")
 const booksRoute = require("./route/books-route")
+const cors = require('cors')
 
 const server = express()
 const port = 4000
 
+server.use(cors())
 server.use(express.json())
 server.use("/books", booksRoute)
 
